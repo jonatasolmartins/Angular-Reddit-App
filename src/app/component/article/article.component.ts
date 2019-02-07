@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Article } from 'src/app/model/article';
 
 @Component({
   selector: 'app-article',
@@ -9,10 +10,13 @@ import { Component, OnInit, Input } from '@angular/core';
     <div>
           {{ article.description }}
     </div>
+    <div>
+          {{ article.date() }}
+    </div>
     `
 })
 export class ArticleComponent implements OnInit {
-  @Input() article: object; 
+  @Input() article: Article; 
   constructor() { }
 
   ngOnInit() {
